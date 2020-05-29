@@ -6,8 +6,31 @@
 // var parolaUtente = prompt("Inserisci una parola");
 // console.log(parolaUtente);
 //
+// // isPalindroma(parolaUtente);
+// if (isPalindroma(parolaUtente)) {
+//   console.log("è palindroma");
+// } else {
+//   console.log("non è palindroma");
+// }
+//
+//
+//
 // // INIZIO FUNZIONE
 //
+// function isPalindroma(parolaDaVerificare){
+//   var result = false;
+//   var parolaArray = parolaDaVerificare.split("");
+//   parolaArray.reverse();
+//   var parolaInversa = parolaArray.join("");
+//
+//   if (parolaDaVerificare == parolaInversa)  {
+//     result = true;
+//   }
+//
+//   return result;
+//
+// }
+
 // function parolaPalindroma(parolaDaVerificare) {
 //   var palindroma = messaggio;
 //   // Divido la parola lettera x lettera
@@ -28,6 +51,7 @@
 //   var messaggio
 //
 //   if (parolaStringa1 == parolaStringa2) {
+//
 //     messaggio = alert("La parola è polindroma");
 //
 //   } else {
@@ -38,15 +62,15 @@
 //   return palindroma;
 //
 // }
-//
-// // FINE FUNZIONE
-//
-//
-// // PROVA FUNZIONE
-// var prova = parolaPalindroma(parolaUtente)
+
+// FINE FUNZIONE
+
+
+// PROVA FUNZIONE
+// var prova = parolaPalindroma(parolaUtente);
 // console.log(prova);
-//
-// // FINE ESERCIZIO 1
+
+// FINE ESERCIZIO 1
 
 
 // ESERCIZIO 2 PARI E DISPARI
@@ -102,37 +126,6 @@ function pariODispari(){
 }
 
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
