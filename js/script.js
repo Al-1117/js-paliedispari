@@ -27,7 +27,7 @@
 //
 //   var messaggio
 //
-//   if (parolaStringa1 == parolaStringa2 ) {
+//   if (parolaStringa1 == parolaStringa2) {
 //     messaggio = alert("La parola è polindroma");
 //
 //   } else {
@@ -45,8 +45,8 @@
 // // PROVA FUNZIONE
 // var prova = parolaPalindroma(parolaUtente)
 // console.log(prova);
-
-// FINE ESERCIZIO 1
+//
+// // FINE ESERCIZIO 1
 
 
 // ESERCIZIO 2 PARI E DISPARI
@@ -82,16 +82,18 @@ function pariODispari(){
   var somma = numeroPc + numeroUtente;
   console.log(somma);
 
-  // Verdetto
+  // Verdetto e stampa
+
+  var verdetto = document.getElementById('verdetto')
 
   if ( (pariDispari.value == 'pari') && (somma % 2 == 0)) {
-    console.log("hai vinto");
+    verdetto.innerHTML = "Hai vinto :)!"
 
   } else if ( (pariDispari.value == 'dispari') && (somma % 2 != 0)) {
-    console.log("hai vinto");
+    verdetto.innerHTML = "Hai vinto :)!"
 
   } else {
-    console.log('Hai perso');
+    verdetto.innerHTML = "Hai perso :(!"
 
   }
 
