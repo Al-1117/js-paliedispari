@@ -84,10 +84,10 @@ function pariODispari(){
 
   // Verdetto
 
-  if ('pari' && somma % 2 == 0) {
+  if ( (pariDispari.value == 'pari') && (somma % 2 == 0)) {
     console.log("hai vinto");
 
-  } else if ('dispari' && somma % 2 != 0) {
+  } else if ( (pariDispari.value == 'dispari') && (somma % 2 != 0)) {
     console.log("hai vinto");
 
   } else {
