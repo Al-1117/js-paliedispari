@@ -1,35 +1,36 @@
-// // ESERCIZIO 1 - PALINDROMA
-// // CONSEGNA
-// // Una funzione per capire se la parola è palindroma
-//
+// ESERCIZIO 1 - PALINDROMA
+// CONSEGNA
+// Una funzione per capire se la parola è palindroma
+
 // // Chiedo la parola da cercare
-// var parolaUtente = prompt("Inserisci una parola");
-// console.log(parolaUtente);
-//
-// // isPalindroma(parolaUtente);
-// if (isPalindroma(parolaUtente)) {
-//   console.log("è palindroma");
-// } else {
-//   console.log("non è palindroma");
-// }
-//
-//
-//
-// // INIZIO FUNZIONE
-//
-// function isPalindroma(parolaDaVerificare){
-//   var result = false;
-//   var parolaArray = parolaDaVerificare.split("");
-//   parolaArray.reverse();
-//   var parolaInversa = parolaArray.join("");
-//
-//   if (parolaDaVerificare == parolaInversa)  {
-//     result = true;
-//   }
-//
-//   return result;
-//
-// }
+var parolaUtente = prompt("Inserisci una parola");
+console.log(parolaUtente);
+
+isPalindroma(parolaUtente);
+if (isPalindroma(parolaUtente)) {
+  console.log("è palindroma");
+} else {
+  console.log("non è palindroma");
+}
+
+
+
+// INIZIO FUNZIONE
+
+function isPalindroma(parolaDaVerificare){
+  var result = false;
+  var parolaArray = parolaDaVerificare.split("");
+  parolaArray.reverse();
+  var parolaInversa = parolaArray.join("");
+  console.log(parolaInversa);
+
+  if (parolaDaVerificare == parolaInversa)  {
+    result = true;
+  }
+
+  return result;
+
+}
 
 // function parolaPalindroma(parolaDaVerificare) {
 //   var palindroma = messaggio;
@@ -66,67 +67,124 @@
 // FINE FUNZIONE
 
 
-// PROVA FUNZIONE
-// var prova = parolaPalindroma(parolaUtente);
-// console.log(prova);
-
 // FINE ESERCIZIO 1
 
 
 // ESERCIZIO 2 PARI E DISPARI
 // CONSEGNA
-// L’utente sceglie pari o dispari e un numero
-// da 1 a 5.
-// Generiamo un numero random (sempre da 1
-// a 5) per il computer.
-// Sommiamo i due numeri e dichiariamo chi ha
-// vinto.
+// L’utente sceglie pari o dispari e un numero da 1 a 5.
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+// Sommiamo i due numeri
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+// Dichiariamo chi ha vinto.
+//
+// FUNZIONI PER ESEGUIRE IL GIOCO PARI E DISPARI
+
+// Funzione genera numeri random in un array
+function generaNumeriCasuali(quantitaNumeri, limiteMassimo){
+  var arrayNumeri = [];
+  for (var i = 0; i < quantitaNumeri; i++) {
+  var numeroRandom =  Math.floor(Math.random() * limiteMassimo) + 1;
+    arrayNumeri.push(numeroRandom);
+  }
+  return arrayNumeri;
+}
+
+//
+// // prova funzione
+// var numeri = generaNumeriCasuali(10, 10);
+// console.log(numeri);
+
+// funzione somma numeri
+function sommaNumeri(numero1, numero2){
+  var somma = parseInt(numero1 + numero2);
+  return somma;
+}
+
+// prova funzione somma numeri
+// var numero = sommaNumeri(10, 10);
+// console.log(numero);
+
+  // funzione pariDispari
+function pariDispari(totale){
+
+  var messaggio;
+
+  if (totale % 2 == 0) {
+    messaggio = true;
+    console.log("Pari");
+
+  } else if (totale % 2 != 0) {
+    messaggio = false;
+    console.log('Dispari');
+
+  }
+
+  return messaggio
+}
+
+// // prova pariDispari
+// var verdetto = pariDispari(36);
+// console.log(verdetto);
+
+
+// SVOLGIMENTO DEL GIOCO PARI E DISPARI
 
 // Chiedo all'utente se pari o dispari
-var pariDispari = document.getElementById('pari_dispari');
-
-// Chiedo all'utente il numero scelto
+var scelta = document.getElementById('scelta');
+//
+// // Chiedo all'utente il numero scelto
 var numeroUtente = document.getElementById('numero_utente');
-
-
-// Bottone ok
+//
+// // Bottone ok
 var bottone = document.getElementById('bottone');
+//
+
+
+// Evento cliccando sul bottone
 
 bottone.addEventListener('click',
 
-function pariODispari(){
+function(){
+  // numero scelto dall'utente
   numeroUtente = parseInt(numeroUtente.value);
-  // Numero scelto dal pc
-  var numeroPc = Math.floor(Math.random() * 5) + 1;
-  console.log(pariDispari.value);
-  console.log(numeroUtente);
-  console.log(numeroPc);
+  console.log("Il numero scelto da te è " + numeroUtente);
 
-  // Somma dei numeri
-  var somma = numeroPc + numeroUtente;
-  console.log(somma);
+  // Numero scelto dal pc utilizzando la funzione generaNumeriCasuali
+  var numeroPc = generaNumeriCasuali(1, 5);
+  console.log(scelta.value);
+  numeroPc = numeroPc.join();
+  numeroPc = parseInt(numeroPc);
+  console.log("Il numero scelto dal PC è " + numeroPc);
 
-  // Verdetto e stampa
+  // Somma dei numeri utilizzando la funzione sommaNumeri
+  var somma = sommaNumeri(numeroUtente, numeroPc)
+  console.log("Totale dei numeri è " + somma);
 
-  var verdetto = document.getElementById('verdetto')
+  // Verdetto e stampa utilizzando la funzione pariDispari
 
-  if ( (pariDispari.value == 'pari') && (somma % 2 == 0)) {
-    verdetto.innerHTML = "Hai vinto :)!"
+  var output = document.getElementById('verdetto');
 
-  } else if ( (pariDispari.value == 'dispari') && (somma % 2 != 0)) {
-    verdetto.innerHTML = "Hai vinto :)!"
+  var verdetto = pariDispari(somma)
+  console.log(verdetto);
+
+
+  if ( ( scelta.value == 'pari') && (verdetto == true)) {
+    output.innerHTML = "Hai vinto :)!"
+    console.log(output);
+
+  } else if ( (scelta.value == 'dispari') && (verdetto == false)) {
+    output.innerHTML = "Hai vinto :)!"
+    console.log(output);
 
   } else {
-    verdetto.innerHTML = "Hai perso :(!"
+    output.innerHTML = "Hai perso :(!"
+    console.log(output);
 
   }
 
 
-
 }
-
 );
-
-
 
 // FINE  ESERCIZIO 2 PARI E DISPARI
