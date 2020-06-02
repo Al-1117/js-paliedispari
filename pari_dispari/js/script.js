@@ -1,73 +1,4 @@
-// ESERCIZIO 1 - PALINDROMA
-// CONSEGNA
-// Una funzione per capire se la parola è palindroma
 
-// // Chiedo la parola da cercare
-var parolaUtente = prompt("Inserisci una parola");
-console.log(parolaUtente);
-
-isPalindroma(parolaUtente);
-if (isPalindroma(parolaUtente)) {
-  console.log("è palindroma");
-} else {
-  console.log("non è palindroma");
-}
-
-
-
-// INIZIO FUNZIONE
-
-function isPalindroma(parolaDaVerificare){
-  var result = false;
-  var parolaArray = parolaDaVerificare.split("");
-  parolaArray.reverse();
-  var parolaInversa = parolaArray.join("");
-  console.log(parolaInversa);
-
-  if (parolaDaVerificare == parolaInversa)  {
-    result = true;
-  }
-
-  return result;
-
-}
-
-// function parolaPalindroma(parolaDaVerificare) {
-//   var palindroma = messaggio;
-//   // Divido la parola lettera x lettera
-//   var parolaDivisa = parolaUtente.split("");
-//   console.log(parolaDivisa);
-//
-//   var parolaUtenteInversa = parolaDivisa.reverse();
-//   console.log(parolaUtenteInversa);
-//
-//   // Converto l'array in stringhe
-//
-//   var parolaStringa1 = parolaDivisa.toString();
-//   console.log(parolaStringa1);
-//
-//   var parolaStringa2 = parolaUtenteInversa.toString();
-//   console.log(parolaStringa2);
-//
-//   var messaggio
-//
-//   if (parolaStringa1 == parolaStringa2) {
-//
-//     messaggio = alert("La parola è polindroma");
-//
-//   } else {
-//     messaggio = alert("La parola non è polindroma");
-//
-//   }
-//
-//   return palindroma;
-//
-// }
-
-// FINE FUNZIONE
-
-
-// FINE ESERCIZIO 1
 
 
 // ESERCIZIO 2 PARI E DISPARI
@@ -77,7 +8,7 @@ function isPalindroma(parolaDaVerificare){
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
-//
+
 // FUNZIONI PER ESEGUIRE IL GIOCO PARI E DISPARI
 
 // Funzione genera numeri random in un array
@@ -146,6 +77,10 @@ var bottone = document.getElementById('bottone');
 bottone.addEventListener('click',
 
 function(){
+  // Mostro sezione Analisi
+  var analisi = document.getElementById('analisi');
+  analisi.className = analisi.classList + " mostra";
+
   // numero scelto dall'utente
   numeroUtente = parseInt(numeroUtente.value);
   console.log("Il numero scelto da te è " + numeroUtente);
@@ -161,24 +96,25 @@ function(){
   var somma = sommaNumeri(numeroUtente, numeroPc)
   console.log("Totale dei numeri è " + somma);
 
-  // Verdetto e stampa utilizzando la funzione pariDispari
-
+  // Variabili per la stampa
   var output = document.getElementById('verdetto');
-
   var verdetto = pariDispari(somma)
-  console.log(verdetto);
+  var numeroScelto = document.getElementById('numero_scelto').innerHTML = numeroUtente;
+  var numeroPCscelto = document.getElementById('numero_pc_scelto').innerHTML = numeroPc;
+  var totaleNumeri = document.getElementById('somma_numeri').innerHTML = somma;
 
 
+  // Verdetto utilizzando la funzione pariDispari
   if ( ( scelta.value == 'pari') && (verdetto == true)) {
     output.innerHTML = "Hai vinto :)!"
     console.log(output);
 
-  } else if ( (scelta.value == 'dispari') && (verdetto == false)) {
-    output.innerHTML = "Hai vinto :)!"
+  } else if ((scelta.value == 'dispari') && (verdetto == false)) {
+    output.innerHTML = "Hai vinto :-)!"
     console.log(output);
 
   } else {
-    output.innerHTML = "Hai perso :(!"
+    output.innerHTML = "Hai perso :-(!"
     console.log(output);
 
   }

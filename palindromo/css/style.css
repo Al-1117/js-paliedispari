@@ -1,0 +1,85 @@
+
+body{
+  color: #ffffff;
+  font-family: 'Oxygen', sans-serif;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main{
+  height: 100vh;
+}
+
+/* Layover */
+.layover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+}
+
+/* TOP PAGE */
+.top, .mid{
+  margin-top: 70px;
+  text-align: center;
+}
+.top > .title{
+  margin: 30px 0;
+}
+
+.top > .title > h1{
+  text-transform: uppercase;
+}
+
+.top > .sub_title > h3{
+  font-size: 1.5rem;
+}
+
+/* MID PAGE */
+
+.mid p{
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.mid input, button {
+  margin: 10px 0;
+  padding: 5px;
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+
+.mid button{
+color: #ffffff;
+font-family: 'Oxygen', sans-serif;
+background-color: black;
+width: 100px;
+border: 1px solid #ffffff;
+}
+
+.mid button:hover{
+  color: black;
+  font-family: 'Oxygen', sans-serif;
+  background-color: #ffffff;
+  width: 100px;
+}
+
+.mid input:focus {
+  border: none;
+}
+
+/* Output */
+#output{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 25px;
+}

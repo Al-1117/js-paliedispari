@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pari o dispari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <main>
+      <!-- ESERCIZIO DUE -->
+      <div class="esercizio_2">
+          <h2>Pari o Dispari</h2>
+          <!-- scelta pari o dispari -->
+          <h4>Scegli se Pari o Dispari</h4>
+          <select id="scelta" class="" name="">
+            <option value="pari">Pari</option>
+            <option value="dispari">Dispari</option>
+          </select>
+
+          <!-- scelta del numero -->
+          <h4>Scegli un numero da 1 a 5</h4>
+          <input id="numero_utente" type="number">
+          <!-- tasto ok -->
+          <button id="bottone" type="button" name="button">Fatto</button>
+
+          <!-- Analisi -->
+          <div id="analisi" class="nascondi">
+            <p>Il numero scelto da te è: <span id="numero_scelto" ></span> </p>
+            <p>Il numero scelto dal computer è: <span id="numero_pc_scelto" ></span> </p>
+            <p>La somma dei numeri è: <span id="somma_numeri" ></span> </p>
+          </div>
+
+          <!-- Verdetto -->
+          <h3 id="verdetto"></h3>
+
+
+      </div>
+
+      <script type="text/javascript" src="js/script.js"></script>
+    </main>
+
+  </body>
+</html>

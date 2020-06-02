@@ -1,0 +1,63 @@
+/* General */
+body{
+  color: #ffffff;
+  font-family: 'Oxygen', sans-serif;
+  background-image: url(../img/js-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.esercizio_2{
+  margin-top: 100px;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Input, Button and select */
+input, button, select {
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px;
+  width: auto;
+  border: 2px solid black;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+input{
+  width: 80px;
+}
+
+
+button{
+color: #ffffff;
+font-family: 'Oxygen', sans-serif;
+background-color: black;
+width: 100px;
+border: 1px solid #ffffff;
+}
+
+button:hover{
+  color: black;
+  font-family: 'Oxygen', sans-serif;
+  background-color: #ffffff;
+  width: 100px;
+  border: 1px solid black;
+}
+
+input:focus {
+  border: none;
+}
+
+
+
+/* On off */
+
+.nascondi{
+  display: none;
+}
+
+.mostra{
+  display: block;
+}
